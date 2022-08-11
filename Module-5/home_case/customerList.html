@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+<h3>
+    <center>Danh sách khách hàng</center>
+</h3>
+<table class="table">
+    <tr>
+        <th>STT</th>
+        <th>Tên khách hàng</th>
+        <th>Ngày sinh</th>
+        <th>Giới tính</th>
+        <th>Số CMND</th>
+        <th>Số điện thoại</th>
+        <th>Email</th>
+        <th>Địa chỉ</th>
+        <th>Loại khách hàng</th>
+        <th>Sửa</th>
+        <th>Xóa</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>Trương Ngọc Huyền</td>
+        <td>9/10/1997</td>
+        <td>Nữ</td>
+        <td>123456789</td>
+        <td>987654321</td>
+        <td>huyen@gmail.com</td>
+        <td>Quảng Nam</td>
+        <td>Diamond</td>
+        <td>
+            <button type="button" class="btn btn-secondary"><a class="text-white" href="customerEdit.html"
+                                                               style="margin-right: 20px">Edit</a></button>
+        </td>
+        <td><button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal">Delete
+        </button></td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>Trương Ngọc Hân</td>
+        <td>9/10/1993</td>
+        <td>Nữ</td>
+        <td>345678901</td>
+        <td>124095772</td>
+        <td>han@gmail.com</td>
+        <td>Quảng Nam</td>
+        <td>Diamond</td>
+        <td>
+            <button type="button" class="btn btn-secondary"><a class="text-white" href="customerEdit.html"
+                                                               style="margin-right: 20px">Edit</a></button>
+        </td>
+        <td><button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                data-bs-target="#exampleModal">Delete
+        </button></td>
+    </tr>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Bạn chắc chắn muốn xóa
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</table>
+<br>
+<nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center">
+        <li class="page-item disabled">
+            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item">
+            <a class="page-link" href="#">Next</a>
+        </li>
+    </ul>
+</nav>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+</html>
