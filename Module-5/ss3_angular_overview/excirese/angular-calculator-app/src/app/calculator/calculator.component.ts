@@ -25,7 +25,7 @@ export class CalculatorComponent implements OnInit {
     this.secondOperand = number2;
   }
 
-  sum(): void {
+  calculation(): void {
     switch (this.operator) {
       case '+':
         this.result = this.firstOperand + this.secondOperand;
