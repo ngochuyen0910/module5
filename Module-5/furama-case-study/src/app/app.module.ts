@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {HeaderComponent} from "./component/header/header.component";
 import { BodyComponent } from './component/body/body.component';
@@ -14,12 +13,26 @@ import { CreateFacilityComponent } from './facility/create-facility/create-facil
 import { EditFacilityComponent } from './facility/edit-facility/edit-facility.component';
 import { ListContractComponent } from './contract/list-contract/list-contract.component';
 import { CreateContractComponent } from './contract/create-contract/create-contract.component';
+import {RouterModule, Routes} from '@angular/router';
+
+const routes: Routes = [
+  {path: 'home', component: BodyComponent},
+  {path: 'customer', component: ListCustomerComponent},
+  {path: 'customerAdd', component: CreateCustomerComponent},
+  {path: 'customerEdit', component: EditCustomerComponent},
+  {path: 'facility', component: ListFacilityComponent},
+  {path: 'facilityAdd', component: CreateFacilityComponent},
+  {path: 'facilityEdit', component: EditFacilityComponent},
+  {path: 'contract', component: ListContractComponent},
+  {path: 'contractAdd', component: CreateContractComponent},
+
+  {path: '', redirectTo: 'home', pathMatch: 'full'},
+];
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    BodyComponent,
     FooterComponent,
     ListCustomerComponent,
     EditCustomerComponent,
@@ -32,7 +45,7 @@ import { CreateContractComponent } from './contract/create-contract/create-contr
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]
