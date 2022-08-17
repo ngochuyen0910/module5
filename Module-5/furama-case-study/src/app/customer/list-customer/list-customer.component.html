@@ -1,7 +1,5 @@
-<br>
-<a class="text-white" href="/create" style="margin-right: 20px">
-  <button class="btn btn-primary" type="submit">Add New Customers</button>
-</a>
+<h2 class="d-flex justify-content-center">CUSTOMER</h2>
+<a class="btn btn-outline-primary mb-2 ml-4" routerLink="/customerAdd" role="button">Create new customer</a>
 <table class="table">
   <thead>
   <tr>
@@ -19,39 +17,21 @@
   </tr>
   </thead>
   <tbody>
-  <tr>
-    <td>1</td>
-    <td>Trương Ngọc Huyền</td>
-    <td>09/10/1997</td>
-    <td>Nữ</td>
-    <td>123456789</td>
-    <td>987654321</td>
-    <td>huyen@gmail.com</td>
-    <td>Quảng Nam</td>
-    <td>Diamond</td>
+  <tr *ngFor="let c of customer; index as i">
+    <td>{{i + 1}}</td>
+    <td>{{c.customerName}}</td>
+    <td>{{c.customerBirthday}}</td>
     <td>
-      <a class="text-white" href="edit.html" style="margin-right: 20px">
-        <button class="btn btn-primary" type="submit">Edit</button>
-      </a>
+      <span *ngIf="c.customerGender==1;else noMale">Male</span>
+      <ng-template #noMale>Female</ng-template>
     </td>
+    <td>{{c.customerIdCard}}</td>
+    <td>{{c.customerPhone}}</td>
+    <td>{{c.customerEmail}}</td>
+    <td>{{c.customerAddress}}</td>
+    <td>{{c.customerType.name}}</td>
     <td>
-      <button type="button" class="btn btn-danger" data-bs-toggle="modal"
-              data-bs-target="#exampleModal">Delete
-      </button>
-    </td>
-  </tr>
-  <tr>
-    <td>2</td>
-    <td>Trương Ngọc Hân</td>
-    <td>09/10/1993</td>
-    <td>Nữ</td>
-    <td>345678901</td>
-    <td>124095772</td>
-    <td>han@gmail.com</td>
-    <td>Quảng Nam</td>
-    <td>Diamond</td>
-    <td>
-      <a class="text-white" href="edit.html" style="margin-right: 20px">
+      <a class="text-white" [routerLink]="['/customerEdit',c.id]" style="margin-right: 20px">
         <button class="btn btn-primary" type="submit">Edit</button>
       </a>
     </td>
@@ -69,14 +49,28 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          Are you sure you want to delete?
+          Are you sure you want to delete Truong Ngoc Mai?
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Delete</button>
+          <button type="button" class="btn btn-danger">Delete</button>
         </div>
       </div>
     </div>
   </div>
   </tbody>
 </table>
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+    <li class="page-item disabled">
+      <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+    </li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item">
+      <a class="page-link" href="#">Next</a>
+    </li>
+  </ul>
+</nav>
+

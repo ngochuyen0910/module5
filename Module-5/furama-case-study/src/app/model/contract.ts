@@ -1,6 +1,8 @@
 export interface Contract {
-  contractId?: number;
-  startDate?: string;
-  endDate?: string;
-  deposit?: number;
+  id?: number;
+  contractStartDate?: string;
+  contractEndDate?: string;
+  contractDeposit?: number;
+  customerName?: string;
+  facility?: string;
 }
