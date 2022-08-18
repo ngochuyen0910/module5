@@ -1,4 +1,5 @@
 <h2 class="d-flex justify-content-center">CONTRACT</h2>
+<a class="btn btn-outline-primary mb-2 ml-4" routerLink="/contractAdd" role="button">Create new contract</a>
 <table class="table">
   <thead>
   <tr>
@@ -12,13 +13,13 @@
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let c of contracts">
-    <td>{{c.id}}</td>
+  <tr *ngFor="let c of contract; index as i">
+    <td>{{i + 1}}</td>
     <td>{{c.facility}}</td>
     <td>{{c.customerName}}</td>
     <td>{{c.contractStartDate}}</td>
     <td>{{c.contractEndDate}}</td>
-    <td>{{c.contractDeposit}}</td>
+    <td>{{c.contractDeposit | currency}}</td>
     <td>
       <button type="button" class="btn btn-primary m-lg-2">+</button>
       <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="attachFacilityModal">

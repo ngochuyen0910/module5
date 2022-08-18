@@ -20,7 +20,7 @@
   <tr *ngFor="let c of customer; index as i">
     <td>{{i + 1}}</td>
     <td>{{c.customerName}}</td>
-    <td>{{c.customerBirthday}}</td>
+    <td>{{c.customerBirthday| date:"dd/MM/yyyy"}}</td>
     <td>
       <span *ngIf="c.customerGender==1;else noMale">Male</span>
       <ng-template #noMale>Female</ng-template>

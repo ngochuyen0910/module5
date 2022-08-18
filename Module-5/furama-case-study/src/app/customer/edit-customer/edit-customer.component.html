@@ -5,18 +5,16 @@
     <form [formGroup]="customerForm" (ngSubmit)="updateCustomer(id)">
       <div>
         <label>Customer Name</label>
-        <input type="text" formControlName="customerName">
+        <input type="text" id="customerName" formControlName="customerName">
       </div>
       <div>
         <label>Date Of Birth</label>
-        <input type="text" formControlName="customerBirthday">
+        <input type="date" formControlName="customerBirthday">
       </div>
       <div>
-        <label>Gender</label>
-        <select formControlName="customerGender">
-          <option value="Male">Male</option>
-          <option value="Female">Female</option>
-        </select>
+        <label class="me-sm-3">Gender</label>
+        <input type="radio" formControlName="customerGender" value="Male">Male
+        <input type="radio" formControlName="customerGender" value="Female">Female
       </div>
       <div>
         <label>Identity Card Number</label>
@@ -28,9 +26,7 @@
       </div>
       <div>
         <label>Email</label>
-        <div class="input-group mb-3">
-          <input type="text" formControlName="customerEmail">
-        </div>
+        <input type="text" formControlName="customerEmail">
       </div>
       <div>
         <label>Address</label>
@@ -47,7 +43,7 @@
         </select>
       </div>
       <div>
-        <input type="submit" value="Edit"/>
+        <input type="submit" value="Edit customer"/>
       </div>
     </form>
   </div>

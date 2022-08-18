@@ -10,4 +10,6 @@ export interface Facility {
   numberOfFloors?: number;
   facilityFree?: string;
   image?: string;
+  facilityType?: string;
+  rentType?: string;
 }

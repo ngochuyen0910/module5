@@ -117,4 +117,8 @@ export class FacilityService {
   getAll() {
     return this.facilities;
   }
+
+  save(facility: Facility) {
+    this.facilities.push(facility);
+  }
 }

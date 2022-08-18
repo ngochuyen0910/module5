@@ -11,7 +11,6 @@ import {FormControl, FormGroup} from '@angular/forms';
 export class EditCustomerComponent implements OnInit {
   customerForm: FormGroup;
   id: number;
-
   constructor(private customerService: CustomerService,
               private activatedRoute: ActivatedRoute,
               private router: Router) {
@@ -31,6 +30,8 @@ export class EditCustomerComponent implements OnInit {
       });
     });
   }
+
+
 
   ngOnInit() {
   }

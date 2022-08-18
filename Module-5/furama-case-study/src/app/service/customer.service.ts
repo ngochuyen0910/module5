@@ -1,5 +1,8 @@
 import {Injectable} from '@angular/core';
 import {Customer} from "../model/customer";
+import {CustomerTypeService} from "./customerType.service";
+import {CustomerType} from "../model/customer-type";
+
 
 @Injectable({
   providedIn: 'root'
@@ -60,17 +63,23 @@ export class CustomerService {
       customerEmail: 'hoa@gmail.com',
       customerAddress: 'Quang Nam',
       customerType: {id: 3, name: 'Gold'}
-    }
-  ]
+    }]
 
-  constructor() {
+  constructor(private customerTypeService: CustomerTypeService) {
   }
+
+  customerTypeList: CustomerType[] = this.customerTypeService.getAll();
 
   getAll() {
     return this.customers;
   }
 
   saveCustomer(customer: Customer) {
+    for (let i = 0; i < this.customerTypeList.length; i++) {
+      if (this.customerTypeList[i].name == customer.customerType) {
+        customer.customerType = this.customerTypeList[i];
+      }
+    }
     this.customers.push(customer);
   }
 
