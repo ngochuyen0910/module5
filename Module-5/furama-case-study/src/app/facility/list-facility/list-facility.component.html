@@ -10,12 +10,12 @@
             <p class="card-text">{{facility.facilityName}}<br>
               Room size:{{facility.area}}<br>
               Cost: {{facility.cost |currency}}</p>
-            <a class="text-white" href="edit.html"
+            <a class="text-white" [routerLink]="['/facilityEdit',facility.id]"
                style="margin-right: 20px">
               <button type="button" class="btn btn-primary">Edit</button>
             </a>
             <button style="margin-left: 20px" type="button" class="btn btn-danger" data-bs-toggle="modal"
-                    data-bs-target="#exampleModal">Delete
+                    data-bs-target="#exampleModal" (click)="getFacilityDelete(facility)">Delete
             </button>
           </div>
         </div>
@@ -32,11 +32,12 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        Are you sure you want to remove the OCEAN SUITE facility?
+        Are you sure you want to remove <span *ngIf="facilitiesDelete"
+                                              style="color:red">{{facilitiesDelete.facilityName}}</span> facility?
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-danger">Delete</button>
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal" (click)="delete()">Delete</button>
       </div>
     </div>
   </div>

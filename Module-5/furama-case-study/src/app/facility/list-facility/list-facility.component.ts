@@ -9,6 +9,7 @@ import {FacilityService} from "../../service/facility.service";
 })
 export class ListFacilityComponent implements OnInit {
   facilities: Facility[] = [];
+  facilitiesDelete: Facility;
 
   constructor(private facilityService: FacilityService) {
   }
@@ -19,5 +20,14 @@ export class ListFacilityComponent implements OnInit {
 
   getAll() {
     this.facilities = this.facilityService.getAll()
+  }
+
+  getFacilityDelete(facility: Facility) {
+    this.facilitiesDelete = facility;
+
+  }
+
+  delete() {
+    this.facilityService.deleteFacility(this.facilitiesDelete.id);
   }
 }

@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {Customer} from "../model/customer";
 import {CustomerTypeService} from "./customerType.service";
 import {CustomerType} from "../model/customer-type";
+import {element} from "protractor";
 
 
 @Injectable({
@@ -91,7 +92,13 @@ export class CustomerService {
     for (let i = 0; i < this.customers.length; i++) {
       if (this.customers[i].id === id) {
         this.customers[i] = customer;
+
       }
     }
+  }
+
+  deleteCustomer(id: number) {
+    let index = this.customers.findIndex(element => element.id === id);
+    this.customers.splice(index, 1);
   }
 }

@@ -9,6 +9,7 @@ import {CustomerService} from "../../service/customer.service";
 })
 export class ListCustomerComponent implements OnInit {
   customer: Customer[] = [];
+  customerDelete: Customer;
 
   constructor(private customerService: CustomerService) {
   }
@@ -19,5 +20,14 @@ export class ListCustomerComponent implements OnInit {
 
   getAll() {
     this.customer = this.customerService.getAll()
+  }
+
+  getCustomerDelete(c: Customer) {
+    this.customerDelete = c;
+
+  }
+
+  delete() {
+    this.customerService.deleteCustomer(this.customerDelete.id);
   }
 }

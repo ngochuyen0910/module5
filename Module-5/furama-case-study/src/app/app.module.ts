@@ -15,6 +15,7 @@ import {ListContractComponent} from './contract/list-contract/list-contract.comp
 import {CreateContractComponent} from './contract/create-contract/create-contract.component';
 import {RouterModule, Routes} from '@angular/router';
 import {ReactiveFormsModule} from "@angular/forms";
+import { DeleteCustomerComponent } from './customer/delete-customer/delete-customer.component';
 
 const routes: Routes = [
   {path: 'home', component: BodyComponent},
@@ -43,6 +44,7 @@ const routes: Routes = [
     EditFacilityComponent,
     ListContractComponent,
     CreateContractComponent,
+    DeleteCustomerComponent,
   ],
   imports: [
     BrowserModule,

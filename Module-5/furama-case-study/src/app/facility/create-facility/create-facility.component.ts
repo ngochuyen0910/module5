@@ -12,11 +12,12 @@ export class CreateFacilityComponent implements OnInit, OnChanges {
   facilityForm: FormGroup = new FormGroup(
     {
       id: new FormControl(),
-      facilityName: new FormControl('', [Validators.required, Validators.pattern('[A-ZẮẰẲẴẶĂẤẦẨẪẬÂÁÀÃẢẠĐẾỀỂỄỆÊÉÈẺẼẸÍÌỈĨỊỐỒỔỖỘÔỚỜỞỠỢƠÓÒÕỎỌỨỪỬỮỰƯÚÙỦŨỤÝỲỶỸỴ]' +
-        '[a-zàáâãèéêìíòóôõùúăđĩũơưăạảấầẩẫậắằẳẵặẹẻẽềềểễệỉịọỏốồổỗộớờởỡợụủứừửữựỳỵỷỹ]+' +
-        '(([ ][A-ZẮẰẲẴẶĂẤẦẨẪẬÂÁÀÃẢẠĐẾỀỂỄỆÊÉÈẺẼẸÍÌỈĨỊỐỒỔỖỘÔỚỜỞỠỢƠÓÒÕỎỌỨỪỬỮỰƯÚÙỦŨỤÝỲỶỸỴ]' +
-        '[a-zàáâãèéêìíòóôõùúăđĩũơưăạảấầẩẫậắằẳẵặẹẻẽềềểễệỉịọỏốồổỗộớờởỡợụủứừửữựỳỵỷỹ]+)' +
-        '|([ ][A-ZẮẰẲẴẶĂẤẦẨẪẬÂÁÀÃẢẠĐẾỀỂỄỆÊÉÈẺẼẸÍÌỈĨỊỐỒỔỖỘÔỚỜỞỠỢƠÓÒÕỎỌỨỪỬỮỰƯÚÙỦŨỤÝỲỶỸỴ]))+')]),
+      facilityName: new FormControl('', [Validators.required,
+        Validators.pattern('[A-ZẮẰẲẴẶĂẤẦẨẪẬÂÁÀÃẢẠĐẾỀỂỄỆÊÉÈẺẼẸÍÌỈĨỊỐỒỔỖỘÔỚỜỞỠỢƠÓÒÕỎỌỨỪỬỮỰƯÚÙỦŨỤÝỲỶỸỴ]' +
+          '[a-zàáâãèéêìíòóôõùúăđĩũơưăạảấầẩẫậắằẳẵặẹẻẽềềểễệỉịọỏốồổỗộớờởỡợụủứừửữựỳỵỷỹ]+' +
+          '(([ ][A-ZẮẰẲẴẶĂẤẦẨẪẬÂÁÀÃẢẠĐẾỀỂỄỆÊÉÈẺẼẸÍÌỈĨỊỐỒỔỖỘÔỚỜỞỠỢƠÓÒÕỎỌỨỪỬỮỰƯÚÙỦŨỤÝỲỶỸỴ]' +
+          '[a-zàáâãèéêìíòóôõùúăđĩũơưăạảấầẩẫậắằẳẵặẹẻẽềềểễệỉịọỏốồổỗộớờởỡợụủứừửữựỳỵỷỹ]+)' +
+          '|([ ][A-ZẮẰẲẴẶĂẤẦẨẪẬÂÁÀÃẢẠĐẾỀỂỄỆÊÉÈẺẼẸÍÌỈĨỊỐỒỔỖỘÔỚỜỞỠỢƠÓÒÕỎỌỨỪỬỮỰƯÚÙỦŨỤÝỲỶỸỴ]))+')]),
       facilityType: new FormControl('', [Validators.required]),
       area: new FormControl('', [Validators.required]),
       cost: new FormControl('', [Validators.required]),
@@ -28,11 +29,29 @@ export class CreateFacilityComponent implements OnInit, OnChanges {
       facilityFree: new FormControl('', [Validators.required]),
       rentType: new FormControl('', [Validators.required]),
       image: new FormControl('', [Validators.required])
-    }
-  )
+    })
 
   constructor(private facilityService: FacilityService,
               private router: Router) {
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    this.facilityForm = new FormGroup(
+      {
+        id: new FormControl(),
+        facilityName: new FormControl(),
+        facilityType: new FormControl(),
+        area: new FormControl(),
+        cost: new FormControl(),
+        maxPeople: new FormControl(),
+        standardRoom: new FormControl(),
+        descriptionOtherConvenience: new FormControl(),
+        poolArea: new FormControl(),
+        numberOfFloors: new FormControl(),
+        facilityFree: new FormControl(),
+        image: new FormControl(),
+        rentType: new FormControl()
+      })
   }
 
   ngOnInit(): void {
@@ -52,23 +71,4 @@ export class CreateFacilityComponent implements OnInit, OnChanges {
     this.type = event.target.value;
   }
 
-  ngOnChanges(changes: SimpleChanges): void {
-    this.facilityForm = new FormGroup(
-      {
-        id: new FormControl(),
-        facilityName: new FormControl(),
-        facilityType: new FormControl(''),
-        area: new FormControl(),
-        cost: new FormControl(),
-        maxPeople: new FormControl(),
-        standardRoom: new FormControl(),
-        descriptionOtherConvenience: new FormControl(),
-        poolArea: new FormControl(),
-        numberOfFloors: new FormControl(),
-        facilityFree: new FormControl(),
-        image: new FormControl(),
-        rentType: new FormControl()
-      }
-    )
-  }
 }

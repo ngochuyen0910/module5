@@ -9,6 +9,8 @@ export class FacilityService {
     {
       id: 1,
       facilityName: 'OCEAN SUITE',
+      facilityType: {id: 1, name: 'Villa'},
+      rentType: {id: 1, name: 'Hours'},
       area: 23000,
       cost: 30000,
       maxPeople: 4,
@@ -22,6 +24,8 @@ export class FacilityService {
     {
       id: 2,
       facilityName: 'OCEAN SUITE',
+      facilityType: {id: 1, name: 'Villa'},
+      rentType: {id: 1, name: 'Hours'},
       area: 25000,
       cost: 50000,
       maxPeople: 5,
@@ -35,6 +39,8 @@ export class FacilityService {
     {
       id: 3,
       facilityName: 'OCEAN SUITE',
+      facilityType: {id: 1, name: 'Villa'},
+      rentType: {id: 1, name: 'Hours'},
       area: 23000,
       cost: 30000,
       maxPeople: 4,
@@ -48,6 +54,8 @@ export class FacilityService {
     {
       id: 4,
       facilityName: 'OCEAN SUITE',
+      facilityType: {id: 1, name: 'Villa'},
+      rentType: {id: 1, name: 'Hours'},
       area: 23000,
       cost: 30000,
       maxPeople: 4,
@@ -61,6 +69,8 @@ export class FacilityService {
     {
       id: 5,
       facilityName: 'OCEAN SUITE',
+      facilityType: {id: 1, name: 'Villa'},
+      rentType: {id: 1, name: 'Hours'},
       area: 23000,
       cost: 30000,
       maxPeople: 4,
@@ -74,6 +84,8 @@ export class FacilityService {
     {
       id: 6,
       facilityName: 'OCEAN SUITE',
+      facilityType: {id: 1, name: 'Villa'},
+      rentType: {id: 1, name: 'Hours'},
       area: 23000,
       cost: 30000,
       maxPeople: 4,
@@ -87,6 +99,8 @@ export class FacilityService {
     {
       id: 7,
       facilityName: 'OCEAN SUITE',
+      facilityType: {id: 1, name: 'Villa'},
+      rentType: {id: 1, name: 'Hours'},
       area: 23000,
       cost: 30000,
       maxPeople: 4,
@@ -100,6 +114,8 @@ export class FacilityService {
     {
       id: 8,
       facilityName: 'OCEAN SUITE',
+      facilityType: {id: 1, name: 'Villa'},
+      rentType: {id: 1, name: 'Hours'},
       area: 23000,
       cost: 30000,
       maxPeople: 4,
@@ -120,5 +136,23 @@ export class FacilityService {
 
   save(facility: Facility) {
     this.facilities.push(facility);
+  }
+
+  findById(id: number) {
+    return this.facilities.find(facility => facility.id === id);
+
+  }
+
+  updateFacility(id: number, facility: Facility) {
+    for (let i = 0; i < this.facilities.length; i++) {
+      if (this.facilities[i].id === id) {
+        this.facilities[i] = facility;
+      }
+    }
+  }
+
+  deleteFacility(id: number) {
+    let index = this.facilities.findIndex(element => element.id === id);
+    this.facilities.splice(index, 1);
   }
 }

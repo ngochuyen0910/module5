@@ -1,3 +1,6 @@
+import {FacilityType} from "./facility-type";
+import {RentType} from "./rent-type";
+
 export interface Facility {
   id?: number;
   facilityName?: string;
@@ -10,6 +13,6 @@ export interface Facility {
   numberOfFloors?: number;
   facilityFree?: string;
   image?: string;
-  facilityType?: string;
-  rentType?: string;
+  facilityType?: FacilityType;
+  rentType?: RentType;
 }
