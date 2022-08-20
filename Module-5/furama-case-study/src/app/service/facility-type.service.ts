@@ -18,4 +18,8 @@ export class FacilityTypeService {
   getALl() {
     return this.facilityTypeList;
   }
+
+  findById(id: number) {
+    return this.facilityTypeList.find(element => element.id === id);
+  }
 }

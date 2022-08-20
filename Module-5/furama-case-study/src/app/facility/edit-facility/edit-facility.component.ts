@@ -34,7 +34,7 @@ export class EditFacilityComponent implements OnInit, OnChanges {
             '(([ ][A-ZẮẰẲẴẶĂẤẦẨẪẬÂÁÀÃẢẠĐẾỀỂỄỆÊÉÈẺẼẸÍÌỈĨỊỐỒỔỖỘÔỚỜỞỠỢƠÓÒÕỎỌỨỪỬỮỰƯÚÙỦŨỤÝỲỶỸỴ]' +
             '[a-zàáâãèéêìíòóôõùúăđĩũơưăạảấầẩẫậắằẳẵặẹẻẽềềểễệỉịọỏốồổỗộớờởỡợụủứừửữựỳỵỷỹ]+)' +
             '|([ ][A-ZẮẰẲẴẶĂẤẦẨẪẬÂÁÀÃẢẠĐẾỀỂỄỆÊÉÈẺẼẸÍÌỈĨỊỐỒỔỖỘÔỚỜỞỠỢƠÓÒÕỎỌỨỪỬỮỰƯÚÙỦŨỤÝỲỶỸỴ]))+')]),
-        facilityType: new FormControl('', [Validators.required]),
+        facilityType: new FormControl(facility.facilityType.id, [Validators.required]),
         area: new FormControl(facility.area, [Validators.required]),
         cost: new FormControl(facility.cost, [Validators.required]),
         maxPeople: new FormControl(facility.maxPeople, [Validators.required]),
@@ -43,7 +43,8 @@ export class EditFacilityComponent implements OnInit, OnChanges {
         poolArea: new FormControl(facility.poolArea, [Validators.required, Validators.pattern('^[1-9]+')]),
         numberOfFloors: new FormControl(facility.numberOfFloors, [Validators.required]),
         facilityFree: new FormControl(facility.facilityFree, [Validators.required]),
-        rentType: new FormControl(facility.rentType, [Validators.required]),
+        rentType: new FormControl(facility.rentType.id, [Validators.required]),
+        image: new FormControl(facility.image,[Validators.required])
       });
     });
     this.facilityType = this.facilityTypeService.getALl();
@@ -59,6 +60,8 @@ export class EditFacilityComponent implements OnInit, OnChanges {
 
   updateFacility(id: number) {
     const facility = this.facilityForm.value;
+    facility.facilityType = this.facilityTypeService.findById(parseInt(this.facilityForm.value.facilityType));
+    facility.rentType = this.rentTypeService.findById(parseInt(this.facilityForm.value.rentType));
     this.facilityService.updateFacility(id, facility);
     this.router.navigate(['/facility']);
   }
@@ -77,6 +80,9 @@ export class EditFacilityComponent implements OnInit, OnChanges {
         poolArea: new FormControl(facility.poolArea),
         numberOfFloors: new FormControl(facility.numberOfFloors),
         facilityFree: new FormControl(facility.facilityFree),
+        image: new FormControl(facility.image),
+        facilityType: new FormControl(facility.facilityType),
+        rentType: new FormControl(facility.rentType)
       }
     )
   }

@@ -23,7 +23,7 @@ export class FacilityService {
     },
     {
       id: 2,
-      facilityName: 'OCEAN SUITE',
+      facilityName: 'OCEAN STUDIO SUITE',
       facilityType: {id: 1, name: 'Villa'},
       rentType: {id: 1, name: 'Hours'},
       area: 25000,
@@ -38,7 +38,7 @@ export class FacilityService {
     },
     {
       id: 3,
-      facilityName: 'OCEAN SUITE',
+      facilityName: 'OCEAN DELUXE',
       facilityType: {id: 1, name: 'Villa'},
       rentType: {id: 1, name: 'Hours'},
       area: 23000,
@@ -53,7 +53,7 @@ export class FacilityService {
     },
     {
       id: 4,
-      facilityName: 'OCEAN SUITE',
+      facilityName: 'GARDEN SUPERIOR',
       facilityType: {id: 1, name: 'Villa'},
       rentType: {id: 1, name: 'Hours'},
       area: 23000,
@@ -68,7 +68,7 @@ export class FacilityService {
     },
     {
       id: 5,
-      facilityName: 'OCEAN SUITE',
+      facilityName: 'POOL VILLAS',
       facilityType: {id: 1, name: 'Villa'},
       rentType: {id: 1, name: 'Hours'},
       area: 23000,
@@ -83,7 +83,7 @@ export class FacilityService {
     },
     {
       id: 6,
-      facilityName: 'OCEAN SUITE',
+      facilityName: 'PRESIDENTIAL SUITE',
       facilityType: {id: 1, name: 'Villa'},
       rentType: {id: 1, name: 'Hours'},
       area: 23000,
@@ -98,7 +98,7 @@ export class FacilityService {
     },
     {
       id: 7,
-      facilityName: 'OCEAN SUITE',
+      facilityName: 'BEACH FRONT VILLAS',
       facilityType: {id: 1, name: 'Villa'},
       rentType: {id: 1, name: 'Hours'},
       area: 23000,
@@ -113,7 +113,7 @@ export class FacilityService {
     },
     {
       id: 8,
-      facilityName: 'OCEAN SUITE',
+      facilityName: 'LAGOON SUPERIOR',
       facilityType: {id: 1, name: 'Villa'},
       rentType: {id: 1, name: 'Hours'},
       area: 23000,

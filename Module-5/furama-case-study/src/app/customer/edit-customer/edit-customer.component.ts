@@ -14,6 +14,7 @@ export class EditCustomerComponent implements OnInit {
   customerForm: FormGroup;
   customerType: CustomerType[];
   id: number;
+  customerGender: number;
 
   constructor(private customerService: CustomerService,
               private customerTypeService: CustomerTypeService,
@@ -46,6 +47,7 @@ export class EditCustomerComponent implements OnInit {
         customerType: new FormControl(customer.customerType.id, [Validators.required])
       });
       this.customerType = this.customerTypeService.getAll();
+      console.log(this.customerForm)
     });
   }
 
@@ -58,6 +60,7 @@ export class EditCustomerComponent implements OnInit {
 
   updateCustomer(id: number) {
     const customer = this.customerForm.value;
+    customer.customerType = this.customerTypeService.findById(parseInt(this.customerForm.value.customerType));
     this.customerService.updateCustomer(id, customer);
     this.router.navigate(['/customer'])
   }

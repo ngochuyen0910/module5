@@ -5,17 +5,23 @@ import {CustomerType} from "../model/customer-type";
   providedIn: 'root'
 })
 export class CustomerTypeService {
-  constructor() { }
+  constructor() {
+  }
 
   customerTypeList: CustomerType[] = [
-    {id: 1, name:'Diamond'},
-    {id: 2, name:'Platinium'},
-    {id: 3, name:'Gold'},
-    {id: 4, name:'Silver'},
-    {id: 5, name:'Member'},
+    {id: 1, name: 'Diamond'},
+    {id: 2, name: 'Platinium'},
+    {id: 3, name: 'Gold'},
+    {id: 4, name: 'Silver'},
+    {id: 5, name: 'Member'},
   ];
 
   getAll() {
     return this.customerTypeList;
   }
+
+  findById(id: number) {
+    return this.customerTypeList.find(element => element.id === id)
+  }
+
 }

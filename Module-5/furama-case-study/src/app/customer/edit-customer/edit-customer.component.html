@@ -14,15 +14,15 @@
 
       <div>
         <label>Date Of Birth</label>
-        <input type="date" formControlName="customerBirthday">
+        <input type="text" formControlName="customerBirthday">
       </div>
       <p style="color:red" *ngIf="customerForm.controls.customerBirthday.hasError('required') &&
-         customerForm.controls.customerBirthday.dirty">Customer Birthday is required</p>
+         customerForm.controls.customerBirthday.touched">Customer Birthday is required</p>
 
       <div>
         <label class="me-sm-3">Gender</label>
-        <input type="radio" formControlName="customerGender" value="Male">Male
-        <input type="radio" formControlName="customerGender" value="Female">Female
+        <input type="radio" formControlName="customerGender" value="0">Male
+        <input type="radio" formControlName="customerGender" value="1">Female
       </div>
       <p style="color:red" *ngIf="customerForm.controls.customerGender.hasError('required') &&
          customerForm.controls.customerIdCard.touched">Customer Gender is required</p>

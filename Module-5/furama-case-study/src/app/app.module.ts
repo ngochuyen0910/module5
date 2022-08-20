@@ -14,7 +14,7 @@ import {EditFacilityComponent} from './facility/edit-facility/edit-facility.comp
 import {ListContractComponent} from './contract/list-contract/list-contract.component';
 import {CreateContractComponent} from './contract/create-contract/create-contract.component';
 import {RouterModule, Routes} from '@angular/router';
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { DeleteCustomerComponent } from './customer/delete-customer/delete-customer.component';
 
 const routes: Routes = [
@@ -46,11 +46,12 @@ const routes: Routes = [
     CreateContractComponent,
     DeleteCustomerComponent,
   ],
-  imports: [
-    BrowserModule,
-    RouterModule.forRoot(routes),
-    ReactiveFormsModule
-  ],
+    imports: [
+        BrowserModule,
+        RouterModule.forRoot(routes),
+        ReactiveFormsModule,
+        FormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
