@@ -64,17 +64,6 @@ export class CustomerService {
       customerEmail: 'hoa@gmail.com',
       customerAddress: 'Quang Nam',
       customerType: {id: 3, name: 'Gold'}
-    },
-    {
-      id: 6,
-      customerName: 'Nguyễn Duy Phúc',
-      customerBirthday: '04/08/2000',
-      customerGender: 0,
-      customerIdCard: '683752924',
-      customerPhone: '0657326153',
-      customerEmail: 'phuc@gmail.com',
-      customerAddress: 'Huế',
-      customerType: {id: 3, name: 'Gold'}
     }]
 
   constructor(private customerTypeService: CustomerTypeService) {

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
 import {ContractService} from "../../service/contract.service";
@@ -13,14 +13,15 @@ export class CreateContractComponent implements OnInit {
     {
       id: new FormControl(),
       facility: new FormControl('', [Validators.required]),
-      customerName: new FormControl('',[Validators.required]),
-      contractStartDate: new FormControl('',[Validators.required]),
-      contractEndDate: new FormControl('',[Validators.required]),
-      contractDeposit: new FormControl('',[Validators.required])
+      customerName: new FormControl('', [Validators.required]),
+      contractStartDate: new FormControl('', [Validators.required]),
+      contractEndDate: new FormControl('', [Validators.required]),
+      contractDeposit: new FormControl('', [Validators.required, Validators.pattern('^[1-9]+')])
     })
 
   constructor(private contractService: ContractService,
-              private router: Router) { }
+              private router: Router) {
+  }
 
   ngOnInit(): void {
   }

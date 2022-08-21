@@ -34,6 +34,7 @@ export class CreateCustomerComponent implements OnInit {
     customerType: new FormControl('', Validators.required)
   })
 
+
   constructor(private customerService: CustomerService,
               private router: Router) {
   }
