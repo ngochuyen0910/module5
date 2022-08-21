@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {IWord} from "../model/dictionary";
-import {DictionaryService} from "../service/dictionary.service";
+import {IWord} from '../model/dictionary';
+import {DictionaryService} from '../service/dictionary.service';
+
 
 @Component({
   selector: 'app-dictionary-page',
@@ -18,6 +19,6 @@ export class DictionaryPageComponent implements OnInit {
   }
 
   getAll() {
-    this.wordList= this.dictionaryService.findAll();
+    this.wordList = this.dictionaryService.findAll();
   }
 }

@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {IWord} from "../model/dictionary";
-import {DictionaryService} from "../service/dictionary.service";
-import {ActivatedRoute, ParamMap, Router} from "@angular/router";
+import {IWord} from '../model/dictionary';
+import {DictionaryService} from '../service/dictionary.service';
+import {ActivatedRoute, ParamMap, Router} from '@angular/router';
 
 @Component({
   selector: 'app-dictionary-detail',
@@ -16,14 +16,11 @@ export class DictionaryDetailComponent implements OnInit {
               private route: Router) {
   }
 
-  ngOnInit()
-    :
-    void {
+  ngOnInit(): void {
     this.activatedRoute.paramMap.subscribe((paramMap: ParamMap) => {
       const word = paramMap.get('word');
       this.wordDetail = this.dictionaryService.findByMean(word);
-
-    })
+    });
   }
 
   back() {

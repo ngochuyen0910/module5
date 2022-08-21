@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {IWord} from "../model/dictionary";
+import {IWord} from '../model/dictionary';
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +19,7 @@ export class DictionaryService {
     return this.wordList;
   }
 
-  findByMean(word) {
+  findByMean(word: string) {
     return this.wordList.find(wordDetail => wordDetail.word === word);
   }
 }

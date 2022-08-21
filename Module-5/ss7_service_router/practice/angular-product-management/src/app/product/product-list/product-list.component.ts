@@ -9,6 +9,7 @@ import {Product} from '../../model/product';
 })
 export class ProductListComponent implements OnInit {
   products: Product[] = [];
+  productDelete: Product;
 
   constructor(private productService: ProductService) {
   }
@@ -21,4 +22,11 @@ export class ProductListComponent implements OnInit {
     this.products = this.productService.getAll();
   }
 
+  getProductDelete(product: Product) {
+    this.productDelete = product;
+  }
+
+  delete() {
+    this.productService.deleteProduct(this.productDelete.id);
+  }
 }

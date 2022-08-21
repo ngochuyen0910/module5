@@ -39,7 +39,7 @@ export class ProductService {
     return this.products;
   }
 
-  saveProduct(product) {
+  saveProduct(product: Product) {
     this.products.push(product);
   }
 
@@ -56,8 +56,7 @@ export class ProductService {
   }
 
   deleteProduct(id: number) {
-    this.products = this.products.filter(product => {
-      return product.id !== id;
-    });
+    let index = this.products.findIndex(element => element.id === id);
+    this.products.splice(index, 1);
   }
 }
