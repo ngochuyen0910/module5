@@ -1,0 +1,49 @@
+{
+  "categories": [
+    {
+      "name": "IPhone7",
+      "id": 1
+    },
+    {
+      "name": "Samsung",
+      "id": 2
+    },
+    {
+      "id": 3,
+      "name": "LG"
+    },
+    {
+      "id": 5,
+      "name": "SS"
+    }
+  ],
+  "products": [
+    {
+      "id": 3,
+      "name": "IPhone X",
+      "price": 968000,
+      "description": "97%",
+      "category": {
+        "id": "2"
+      }
+    },
+    {
+      "id": 4,
+      "name": "IPhone 8",
+      "price": 7540000,
+      "description": "98%",
+      "category": {
+        "id": "2"
+      }
+    },
+    {
+      "name": "IPhone 11 Pro",
+      "price": 1895000,
+      "description": "Like new",
+      "category": {
+        "id": "5"
+      },
+      "id": 5
+    }
+  ]
+}
