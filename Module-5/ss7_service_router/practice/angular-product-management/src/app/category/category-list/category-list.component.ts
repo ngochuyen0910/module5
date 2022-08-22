@@ -14,19 +14,17 @@ export class CategoryListComponent implements OnInit {
   constructor(private categoryService: CategoryService) {
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.getAll();
   }
 
-  getAll() {
-    this.categories = this.categoryService.getAll();
+  getAll(): void {
+    this.categoryService.getAll().subscribe(categories => {
+      this.categories = categories;
+    });
   }
 
-  getCategoryDelete(category: Category) {
-    this.categoryDelete = category;
-  }
-
-  delete() {
+  delete(): void {
     this.categoryService.deleteCategory(this.categoryDelete.id);
   }
 }

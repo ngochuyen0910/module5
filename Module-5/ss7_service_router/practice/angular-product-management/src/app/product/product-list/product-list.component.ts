@@ -14,19 +14,19 @@ export class ProductListComponent implements OnInit {
   constructor(private productService: ProductService) {
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.getAll();
   }
 
-  getAll() {
+  getAll(): void {
     this.products = this.productService.getAll();
   }
 
-  getProductDelete(product: Product) {
+  getProductDelete(product: Product): void {
     this.productDelete = product;
   }
 
-  delete() {
+  delete(): void {
     this.productService.deleteProduct(this.productDelete.id);
   }
 }

@@ -15,11 +15,11 @@ export class DictionaryService {
   constructor() {
   }
 
-  findAll() {
+  findAll(): IWord[] {
     return this.wordList;
   }
 
-  findByMean(word: string) {
+  findByMean(word: string): IWord {
     return this.wordList.find(wordDetail => wordDetail.word === word);
   }
 }

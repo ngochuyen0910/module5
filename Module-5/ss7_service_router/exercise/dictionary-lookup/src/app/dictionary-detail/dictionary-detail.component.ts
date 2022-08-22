@@ -23,7 +23,7 @@ export class DictionaryDetailComponent implements OnInit {
     });
   }
 
-  back() {
+  back(): void {
     this.route.navigateByUrl('');
   }
 }
