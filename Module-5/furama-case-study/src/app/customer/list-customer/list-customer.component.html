@@ -20,7 +20,7 @@
   <tr *ngFor="let c of customer; index as i">
     <td>{{i + 1}}</td>
     <td>{{c.customerName}}</td>
-    <td>{{c.customerBirthday| date:"dd/MM/yyyy"}}</td>
+    <td>{{c.customerBirthday| date:"yyyy/MM/dd"}}</td>
     <td>
       <span *ngIf="c.customerGender==1;else noMale">Male</span>
       <ng-template #noMale>Female</ng-template>
@@ -36,7 +36,7 @@
       </a>
     </td>
     <td>
-      <button type="button" class="btn btn-danger" data-bs-toggle="modal" (click)="getCustomerDelete(c)"
+      <button type="button" class="btn btn-danger" data-bs-toggle="modal" (click)="openDelete(c.id,c.customerName)"
               data-bs-target="#exampleModal">Delete
       </button>
     </td>
@@ -49,11 +49,11 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          Are you sure you want to delete <span *ngIf="customerDelete" style="color:red">{{customerDelete.customerName}}</span>?
+          Are you sure you want to delete <span style="color:red">{{customerName}}</span>?
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-danger" data-bs-dismiss="modal" (click)="delete()">Delete</button>
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal" (click)="delete(id)">Delete</button>
         </div>
       </div>
     </div>

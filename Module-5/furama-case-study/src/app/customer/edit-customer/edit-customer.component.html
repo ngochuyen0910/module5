@@ -2,7 +2,7 @@
 <div class="container-fluid d-flex justify-content-center">
   <div id="form">
     <h3>Edit Customer</h3>
-    <form [formGroup]="customerForm" (ngSubmit)="updateCustomer(id)">
+    <form [formGroup]="customerForm" (ngSubmit)="updateCustomer(id)" *ngIf="customerForm">
       <div>
         <label>Customer Name</label>
         <input type="text" formControlName="customerName">
@@ -14,15 +14,15 @@
 
       <div>
         <label>Date Of Birth</label>
-        <input type="text" formControlName="customerBirthday">
+        <input type="date" formControlName="customerBirthday">
       </div>
       <p style="color:red" *ngIf="customerForm.controls.customerBirthday.hasError('required') &&
          customerForm.controls.customerBirthday.touched">Customer Birthday is required</p>
 
       <div>
         <label class="me-sm-3">Gender</label>
-        <input type="radio" formControlName="customerGender" value="0">Male
-        <input type="radio" formControlName="customerGender" value="1">Female
+        <input type="radio" formControlName="customerGender" [value]="0">Male
+        <input type="radio" formControlName="customerGender" [value]="1">Female
       </div>
       <p style="color:red" *ngIf="customerForm.controls.customerGender.hasError('required') &&
          customerForm.controls.customerIdCard.touched">Customer Gender is required</p>
@@ -51,6 +51,8 @@
       </div>
       <p style="color:red" *ngIf="customerForm.controls.customerEmail.hasError('required') &&
          customerForm.controls.customerEmail.touched">Customer Email is required</p>
+      <p style="color:red" *ngIf="customerForm.controls.customerEmail.hasError('email') &&
+         customerForm.controls.customerEmail.touched">Correct email format</p>
 
       <div>
         <label>Address</label>
@@ -64,7 +66,7 @@
       <div>
         <label>Customer Type</label>
         <select formControlName="customerType">
-          <option *ngFor="let ct of customerType" [value]="ct.id">{{ct.name}}</option>
+          <option *ngFor="let ct of customerTypeList" [value]="ct.name">{{ct.name}}</option>
         </select>
       </div>
       <p style="color:red" *ngIf="customerForm.controls.customerType.hasError('required') &&

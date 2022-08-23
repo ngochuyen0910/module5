@@ -14,8 +14,8 @@
                style="margin-right: 20px">
               <button type="button" class="btn btn-primary">Edit</button>
             </a>
-            <button style="margin-left: 20px" type="button" class="btn btn-danger" data-bs-toggle="modal"
-                    data-bs-target="#exampleModal" (click)="getFacilityDelete(facility)">Delete
+            <button type="button" class="btn btn-danger" data-bs-toggle="modal" (click)="openDelete(facility.id,facility.facilityName)"
+                    data-bs-target="#staticBackdrop">Delete
             </button>
           </div>
         </div>
@@ -24,20 +24,20 @@
   </div>
 </div>
 <br>
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+     aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel" style="color:red">Warning</h5>
+        <h5 class="modal-title" id="staticBackdropLabel">Are You Sure ?</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        Are you sure you want to remove <span *ngIf="facilitiesDelete"
-                                              style="color:red">{{facilitiesDelete.facilityName}}</span> facility?
+        Delete: <span style="color: red"> {{name}} </span>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-danger" data-bs-dismiss="modal" (click)="delete()">Delete</button>
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal" (click)="delete(id)">Delete</button>
       </div>
     </div>
   </div>

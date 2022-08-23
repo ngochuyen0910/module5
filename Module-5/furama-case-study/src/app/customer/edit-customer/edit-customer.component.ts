@@ -1,9 +1,10 @@
 import {Component, OnInit} from '@angular/core';
-import {CustomerService} from "../../service/customer.service";
+import {CustomerService} from "../customer.service";
 import {ActivatedRoute, ParamMap, Router} from "@angular/router";
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {CustomerType} from "../../model/customer-type";
-import {CustomerTypeService} from "../../service/customerType.service";
+import {CustomerTypeService} from "../customerType.service";
+import {ToastrService} from "ngx-toastr";
 
 @Component({
   selector: 'app-edit-customer',
@@ -12,17 +13,27 @@ import {CustomerTypeService} from "../../service/customerType.service";
 })
 export class EditCustomerComponent implements OnInit {
   customerForm: FormGroup;
-  customerType: CustomerType[];
+  customerTypeList: CustomerType[]= [];
   id: number;
-  customerGender: number;
 
   constructor(private customerService: CustomerService,
               private customerTypeService: CustomerTypeService,
               private activatedRoute: ActivatedRoute,
-              private router: Router) {
+              private router: Router,
+              private toastrService: ToastrService) {
     this.activatedRoute.paramMap.subscribe((paramMap: ParamMap) => {
       this.id = +paramMap.get('id');
-      const customer = this.getCustomer(this.id);
+      this.getCustomer(this.id);
+    });
+  }
+
+  ngOnInit() {
+    this.getAllCustomerType();
+  }
+
+  getCustomer(id: number) {
+    return this.customerService.findById(id).subscribe(customer => {
+      console.log(customer)
       this.customerForm = new FormGroup({
         id: new FormControl(customer.id),
         customerName: new FormControl(customer.customerName, [Validators.required,
@@ -37,31 +48,32 @@ export class EditCustomerComponent implements OnInit {
           Validators.pattern('^([0-9]{9}|[0-9]{12})$')]),
         customerPhone: new FormControl(customer.customerPhone,
           [Validators.pattern('^(090|091|\\(84\\)\\+90|\\(84\\)\\+91)[0-9]{7}$')]),
-        customerEmail: new FormControl(customer.customerEmail, [Validators.required]),
+        customerEmail: new FormControl(customer.customerEmail, [Validators.required, Validators.email]),
         customerAddress: new FormControl(customer.customerAddress, [Validators.required,
           Validators.pattern('[A-ZẮẰẲẴẶĂẤẦẨẪẬÂÁÀÃẢẠĐẾỀỂỄỆÊÉÈẺẼẸÍÌỈĨỊỐỒỔỖỘÔỚỜỞỠỢƠÓÒÕỎỌỨỪỬỮỰƯÚÙỦŨỤÝỲỶỸỴ]' +
             '[a-zàáâãèéêìíòóôõùúăđĩũơưăạảấầẩẫậắằẳẵặẹẻẽềềểễệỉịọỏốồổỗộớờởỡợụủứừửữựỳỵỷỹ]+' +
             '(([ ][A-ZẮẰẲẴẶĂẤẦẨẪẬÂÁÀÃẢẠĐẾỀỂỄỆÊÉÈẺẼẸÍÌỈĨỊỐỒỔỖỘÔỚỜỞỠỢƠÓÒÕỎỌỨỪỬỮỰƯÚÙỦŨỤÝỲỶỸỴ]' +
             '[a-zàáâãèéêìíòóôõùúăđĩũơưăạảấầẩẫậắằẳẵặẹẻẽềềểễệỉịọỏốồổỗộớờởỡợụủứừửữựỳỵỷỹ]+)' +
             '|([ ][A-ZẮẰẲẴẶĂẤẦẨẪẬÂÁÀÃẢẠĐẾỀỂỄỆÊÉÈẺẼẸÍÌỈĨỊỐỒỔỖỘÔỚỜỞỠỢƠÓÒÕỎỌỨỪỬỮỰƯÚÙỦŨỤÝỲỶỸỴ]))+')]),
-        customerType: new FormControl(customer.customerType.id, [Validators.required])
+        customerType: new FormControl(customer.customerType.name, [Validators.required])
       });
-      this.customerType = this.customerTypeService.getAll();
-      console.log(this.customerForm)
     });
-  }
-
-  ngOnInit() {
-  }
-
-  getCustomer(id: number) {
-    return this.customerService.findById(id);
   }
 
   updateCustomer(id: number) {
     const customer = this.customerForm.value;
-    customer.customerType = this.customerTypeService.findById(parseInt(this.customerForm.value.customerType));
-    this.customerService.updateCustomer(id, customer);
-    this.router.navigate(['/customer'])
+    customer.customerType = {
+      name: customer.customerType
+    };
+    this.customerService.updateCustomer(id, customer).subscribe(() => {
+      this.toastrService.info("Update successful","Notification");
+      this.router.navigate(['/customer'])
+    });
+  }
+
+  getAllCustomerType() {
+    this.customerTypeService.getAll().subscribe(customerTypeList => {
+      this.customerTypeList = customerTypeList;
+    });
   }
 }

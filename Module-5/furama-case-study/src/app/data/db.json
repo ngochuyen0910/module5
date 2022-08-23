@@ -1,0 +1,316 @@
+{
+  "customers": [
+    {
+      "id": 1,
+      "customerName": "Truong Ngoc  Thi Mai",
+      "customerBirthday": "2022-08-19",
+      "customerGender": 1,
+      "customerIdCard": "3456789022",
+      "customerPhone": "0987764442",
+      "customerEmail": "mai@gmail.com",
+      "customerAddress": "Da Nang",
+      "customerType": {
+        "name": "Diamond"
+      }
+    },
+    {
+      "id": 2,
+      "customerName": "Truong Ngoc Han",
+      "customerBirthday": "2022-08-04",
+      "customerGender": 1,
+      "customerIdCard": 123456789012,
+      "customerPhone": "0901234567",
+      "customerEmail": "han@gmail.com",
+      "customerAddress": "Da Nang",
+      "customerType": {
+        "name": "Platinium"
+      }
+    },
+    {
+      "id": 3,
+      "customerName": "Truong Nhu Y",
+      "customerBirthday": "2022-08-12",
+      "customerGender": 1,
+      "customerIdCard": 345678902223,
+      "customerPhone": "0902323232",
+      "customerEmail": "y@gmail.com",
+      "customerAddress": "Da Nang",
+      "customerType": {
+        "name": "Gold"
+      }
+    },
+    {
+      "id": 5,
+      "customerName": "Le Van An",
+      "customerBirthday": "2022-08-19",
+      "customerGender": 0,
+      "customerIdCard": 678999999999,
+      "customerPhone": "0905612367",
+      "customerEmail": "an@gmail.com",
+      "customerAddress": "Quang Nam",
+      "customerType": {
+        "name": "Diamond"
+      }
+    },
+    {
+      "id": 6,
+      "customerName": "Ngoc Huyen",
+      "customerBirthday": "2022-08-19",
+      "customerGender": 1,
+      "customerIdCard": 897644566721,
+      "customerPhone": "0906567532",
+      "customerEmail": "huyen@gmail.com",
+      "customerAddress": "Quang Nam",
+      "customerType": {
+        "name": "Member"
+      }
+    },
+    {
+      "id": 7,
+      "customerName": "Ngoc Anh",
+      "customerBirthday": "2022-08-04",
+      "customerGender": 1,
+      "customerIdCard": 789876445768,
+      "customerPhone": "0905678951",
+      "customerEmail": "anh123@gmail.com",
+      "customerAddress": "Da Nang",
+      "customerType": {
+        "name": "Gold"
+      }
+    },
+    {
+      "id": 8,
+      "customerName": "Minh Hanh",
+      "customerBirthday": "2022-08-04",
+      "customerGender": 1,
+      "customerIdCard": 123123123123,
+      "customerPhone": "0901212121",
+      "customerEmail": "hanh@gmail.com",
+      "customerAddress": "Da Nang",
+      "customerType": {
+        "name": "Gold"
+      }
+    },
+    {
+      "id": 9,
+      "customerName": "Dinh Hoang",
+      "customerBirthday": "2022-08-03",
+      "customerGender": 0,
+      "customerIdCard": 565656565656,
+      "customerPhone": "0901234567",
+      "customerEmail": "hoang@gmail.com",
+      "customerAddress": "Sai Gon",
+      "customerType": {
+        "name": "Platinium"
+      }
+    }
+  ],
+  "customerTypeList": [
+    {
+      "id": 1,
+      "name": "Diamond"
+    },
+    {
+      "id": 2,
+      "name": "Platinium"
+    },
+    {
+      "id": 3,
+      "name": "Gold"
+    },
+    {
+      "id": 4,
+      "name": "Silver"
+    },
+    {
+      "id": 5,
+      "name": "Member"
+    }
+  ],
+  "facilities": [
+    {
+      "id": 2,
+      "facilityName": "Ocean Studio Suite",
+      "facilityType": {
+        "name": "Villa"
+      },
+      "area": 25000,
+      "cost": 50000,
+      "maxPeople": 5,
+      "standardRoom": "Vip",
+      "descriptionOtherConvenience": "There is a grill",
+      "poolArea": 2300,
+      "numberOfFloors": 2,
+      "facilityFree": "No",
+      "rentType": {
+        "name": "Hours"
+      },
+      "image": "https://everon.com/upload_images/images/noi-that-phong-ngu-khach-san/phong-ngu-khach-san-2.jpg"
+    },
+    {
+      "id": 3,
+      "facilityName": "Ocean Villaaa",
+      "facilityType": {
+        "name": "Villa"
+      },
+      "area": 23000,
+      "cost": 30000,
+      "maxPeople": 5,
+      "standardRoom": "Vip",
+      "descriptionOtherConvenience": "There is a grill",
+      "poolArea": 2300,
+      "numberOfFloors": 2,
+      "facilityFree": "No",
+      "rentType": {
+        "name": "Month"
+      },
+      "image": "https://dyf.vn/wp-content/uploads/2021/12/giuong-doi-khach-san-lon.jpg"
+    },
+    {
+      "id": 4,
+      "facilityName": "Garden Villa",
+      "facilityType": {
+        "name": null
+      },
+      "area": 23000,
+      "cost": 30000,
+      "maxPeople": 4,
+      "standardRoom": "Vip",
+      "descriptionOtherConvenience": "There is a grill",
+      "poolArea": 2300,
+      "numberOfFloors": 2,
+      "facilityFree": "No",
+      "rentType": {
+        "name": null
+      },
+      "image": "https://menhadep.com/wp-content/uploads/thiet-ke-phong-khach-san.jpg"
+    },
+    {
+      "id": 5,
+      "facilityName": "Pool Villa",
+      "facilityType": {
+        "name": "Villa"
+      },
+      "area": 23000,
+      "cost": 30000,
+      "maxPeople": 4,
+      "standardRoom": "Vip",
+      "descriptionOtherConvenience": "There is a grill",
+      "poolArea": 2300,
+      "numberOfFloors": 2,
+      "facilityFree": "No",
+      "rentType": {
+        "name": "Hours"
+      },
+      "image": "https://dyf.vn/wp-content/uploads/2021/12/giuong-doi-khach-san-lon.jpg"
+    },
+    {
+      "id": 6,
+      "facilityName": "Presidential Suite",
+      "facilityType": {
+        "name": "Villa"
+      },
+      "area": 23000,
+      "cost": 30000,
+      "maxPeople": 4,
+      "standardRoom": "Normal",
+      "descriptionOtherConvenience": "There is a grill",
+      "poolArea": 2300,
+      "numberOfFloors": 2,
+      "facilityFree": "No",
+      "rentType": {
+        "name": "Hours"
+      },
+      "image": "https://menhadep.com/wp-content/uploads/phong-ngu-khach-san.jpg"
+    },
+    {
+      "id": 7,
+      "facilityName": "Beach Front Villa",
+      "facilityType": {
+        "name": "Villa"
+      },
+      "area": 23000,
+      "cost": 30000,
+      "maxPeople": 4,
+      "standardRoom": "Normal",
+      "descriptionOtherConvenience": "There is a grill",
+      "poolArea": 2300,
+      "numberOfFloors": 2,
+      "facilityFree": "No",
+      "rentType": {
+        "name": "Hours"
+      },
+      "image": "https://noithattrevietnam.com/uploaded/2019/12/1-thiet-ke-phong-ngu-khach-san%20%282%29.jpg"
+    },
+    {
+      "id": 8,
+      "facilityName": "Lagoon Superior",
+      "facilityType": {
+        "name": "Villa"
+      },
+      "area": 23000,
+      "cost": 30000,
+      "maxPeople": 7,
+      "standardRoom": "Normal",
+      "descriptionOtherConvenience": "There is a grill",
+      "poolArea": 2300,
+      "numberOfFloors": 2,
+      "facilityFree": "No",
+      "rentType": {
+        "name": "Hours"
+      },
+      "image": "https://i.pinimg.com/736x/af/e6/68/afe668580604a3377ecf065ac86a9a5a.jpg"
+    },
+    {
+      "id": 9,
+      "facilityName": "Ngoc Huyen",
+      "facilityType": {
+        "name": "Room"
+      },
+      "area": 2,
+      "cost": 2,
+      "maxPeople": 2,
+      "standardRoom": "",
+      "descriptionOtherConvenience": "",
+      "poolArea": "",
+      "numberOfFloors": "",
+      "facilityFree": "2",
+      "rentType": {
+        "name": "Day"
+      },
+      "image": "https://www.obieworld.com/wp-content/uploads/2020/09/110.jpg"
+    }
+  ],
+  "facilityTypeList": [
+    {
+      "id": 1,
+      "name": "Villa"
+    },
+    {
+      "id": 2,
+      "name": "House"
+    },
+    {
+      "id": 3,
+      "name": "Room"
+    }
+  ],
+  "rentTypeList": [
+    {
+      "id": 1,
+      "name": "Hours"
+    },
+    {
+      "id": 2,
+      "name": "Day"
+    },
+    {
+      "id": 3,
+      "name": "Month"
+    },
+    {
+      "id": 4,
+      "name": "Year"
+    }
+  ]
+}
