@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
 import {ContractService} from "../contract.service";
+import {ToastrService} from "ngx-toastr";
 
 @Component({
   selector: 'app-create-contract',
@@ -20,7 +21,8 @@ export class CreateContractComponent implements OnInit {
     })
 
   constructor(private contractService: ContractService,
-              private router: Router) {
+              private router: Router,
+              private toastrService: ToastrService) {
   }
 
   ngOnInit(): void {
@@ -28,8 +30,10 @@ export class CreateContractComponent implements OnInit {
 
   submit() {
     const contract = this.contractForm.value;
-    this.contractService.save(contract);
-    this.contractForm.reset();
-    this.router.navigate(['/contract'])
+    this.contractService.saveContract(contract).subscribe(() => {
+      this.toastrService.info("Successfully added new", "Notification")
+      this.router.navigate(['/contract']);
+      this.contractForm.reset();
+    }, e => console.log(e));
   }
 }

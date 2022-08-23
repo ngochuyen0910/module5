@@ -85,23 +85,10 @@
       "customerGender": 1,
       "customerIdCard": 123123123123,
       "customerPhone": "0901212121",
-      "customerEmail": "hanh@gmail.com",
+      "customerEmail": "hanh123@gmail.com",
       "customerAddress": "Da Nang",
       "customerType": {
         "name": "Gold"
-      }
-    },
-    {
-      "id": 9,
-      "customerName": "Dinh Hoang",
-      "customerBirthday": "2022-08-03",
-      "customerGender": 0,
-      "customerIdCard": 565656565656,
-      "customerPhone": "0901234567",
-      "customerEmail": "hoang@gmail.com",
-      "customerAddress": "Sai Gon",
-      "customerType": {
-        "name": "Platinium"
       }
     }
   ],
@@ -311,6 +298,64 @@
     {
       "id": 4,
       "name": "Year"
+    }
+  ],
+  "contracts": [
+    {
+      "id": 1,
+      "facility": "Villa",
+      "customerName": "Truong Ngoc Mai",
+      "contractStartDate": "12/12/2021",
+      "contractEndDate": "13/12/2021",
+      "contractDeposit": 1200000
+    },
+    {
+      "id": 2,
+      "facility": "Room",
+      "customerName": "Tran Thi Hoa",
+      "contractStartDate": "11/01/2021",
+      "contractEndDate": "13/01/2021",
+      "contractDeposit": 1200000
+    },
+    {
+      "id": 3,
+      "facility": "House",
+      "customerName": "Tran Thi Lan",
+      "contractStartDate": "09/09/2021",
+      "contractEndDate": "09/09/2021",
+      "contractDeposit": 1000000
+    },
+    {
+      "id": 4,
+      "facility": "Room",
+      "customerName": "Tran Van An",
+      "contractStartDate": "09/12/2021",
+      "contractEndDate": "09/12/2021",
+      "contractDeposit": 1000000
+    },
+    {
+      "id": 5,
+      "facility": "House",
+      "customerName": "Le Van Anh",
+      "contractStartDate": "12/09/2021",
+      "contractEndDate": "18/09/2021",
+      "contractDeposit": 1000000
+    },
+    {
+      "id": 6,
+      "facility": "Villa",
+      "customerName": "Tran Thi Lan",
+      "contractStartDate": "2022-08-23",
+      "contractEndDate": "2022-08-24",
+      "contractDeposit": "123"
+    },
+    {
+      "id": 7,
+      "facility": "House",
+      "customerName": "Le Van An",
+      "contractStartDate": "2022-08-07",
+      "contractEndDate": "2022-08-13",
+      "contractDeposit": "12345"
     }
   ]
 }

@@ -18,6 +18,8 @@ export class ListContractComponent implements OnInit {
   }
 
   getAll() {
-    this.contract = this.contractService.getAll();
+    this.contractService.getAll().subscribe(contract => {
+      this.contract = contract;
+    });
   }
 }
