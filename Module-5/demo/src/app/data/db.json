@@ -1,0 +1,119 @@
+{
+  "customer": [
+    {
+      "id": 1,
+      "name": "Truong Ngoc Huyen"
+    },
+    {
+      "id": 2,
+      "name": "Le Van An"
+    },
+    {
+      "id": 3,
+      "name": "Nguyen Thi Hong"
+    },
+    {
+      "id": 4,
+      "name": "Tran Anh"
+    }
+  ],
+  "saving": [
+    {
+      "id": 1,
+      "openDate": "12-12-2012",
+      "sentDate": "13-12-2012",
+      "period": {
+        "name": "6 tháng"
+      },
+      "money": 12000,
+      "interestRate": "4%/năm",
+      "endow": "Không có",
+      "customer": {
+        "id": 4,
+        "name": "Tran Anh"
+      }
+    },
+    {
+      "id": 2,
+      "openDate": "02-12-2012",
+      "sentDate": "13-12-2012",
+      "period": {
+        "name": "3 tháng"
+      },
+      "money": 12000,
+      "interestRate": "4%/năm",
+      "endow": "Không có",
+      "customer": {
+        "id": 3,
+        "name": "Nguyen Thi Hong"
+      }
+    },
+    {
+      "id": 3,
+      "openDate": "02-12-2012",
+      "sentDate": "13-12-2012",
+      "period": {
+        "name": "3 tháng"
+      },
+      "money": 12000,
+      "interestRate": "4%/năm",
+      "endow": "Không có",
+      "customer": {
+        "id": 1,
+        "name": "Truong Ngoc Huyen"
+      }
+    },
+    {
+      "id": 4,
+      "openDate": "02-12-2012",
+      "sentDate": "13-12-2012",
+      "period": {
+        "name": "1 năm"
+      },
+      "money": 12000,
+      "interestRate": "4%/năm",
+      "endow": "Không có",
+      "customer": {
+        "id": 4,
+        "name": "Tran Anh"
+      }
+    },
+    {
+      "id": 6,
+      "openDate": "12-12-2012",
+      "sentDate": "13-12-2012",
+      "period": {
+        "name": "Không kì hạn"
+      },
+      "money": 12000,
+      "interestRate": "4%/năm",
+      "endow": "Không có",
+      "customer": {
+        "id": 4,
+        "name": "Tran Anh"
+      }
+    }
+  ],
+  "period": [
+    {
+      "id": 1,
+      "name": "3 tháng"
+    },
+    {
+      "id": 2,
+      "name": "6 tháng"
+    },
+    {
+      "id": 3,
+      "name": "1 năm"
+    },
+    {
+      "id": 4,
+      "name": "5 năm"
+    },
+    {
+      "id": 5,
+      "name": "Không kì hạn"
+    }
+  ]
+}
