@@ -1,0 +1,67 @@
+<div class="container-fluid d-flex justify-content-center">
+  <div id="form">
+    <h3>Thêm mới</h3>
+    <form [formGroup]="medicalRecordForm" (ngSubmit)="submit()" *ngIf="medicalRecordForm">
+      <div>
+        <label>Mã bệnh án</label>
+        <input type="text" formControlName="id">
+      </div>
+
+      <div>
+        <label>Mã bệnh nhân</label>
+        <input type="text" formControlName="patient">
+      </div>
+
+      <div>
+        <label>Tên bệnh nhân</label>
+        <select formControlName="patient">
+          <option *ngFor="let p of patient" [value]="p.id">{{p.name}}</option>
+        </select>
+      </div>
+      <p style="color:red" *ngIf="medicalRecordForm.controls.patient.hasError('required') &&
+         medicalRecordForm.controls.patient.dirty">Tên bệnh nhân không để trống</p>
+
+      <div>
+        <label>Ngày nhập viện</label>
+        <input type="date" formControlName="hospitalizedDay">
+      </div>
+      <p style="color:red" *ngIf="medicalRecordForm.controls.hospitalizedDay.hasError('required') &&
+         medicalRecordForm.controls.hospitalizedDay.dirty">Ngày nhập viện không để trống</p>
+
+      <div>
+        <label>Ngày ra viện</label>
+        <input type="date" formControlName="hospitalDischargeDate">
+      </div>
+      <p style="color:red" *ngIf="medicalRecordForm.controls.hospitalDischargeDate.hasError('required') &&
+         medicalRecordForm.controls.hospitalDischargeDate.dirty">Ngày ra viện không để trống</p>
+
+      <div>
+        <label>Lý do ra viện</label>
+        <input type="text" formControlName="reason">
+      </div>
+      <p style="color:red" *ngIf="medicalRecordForm.controls.reason.hasError('required') &&
+         medicalRecordForm.controls.reason.dirty">Lý do ra viện không để trống</p>
+
+      <div>
+        <label>Phương pháp điều trị</label>
+        <input type="text" formControlName="method">
+      </div>
+      <p style="color:red" *ngIf="medicalRecordForm.controls.method.hasError('required') &&
+         medicalRecordForm.controls.method.dirty">Phương pháp điều trị không để trống</p>
+
+      <div>
+        <label>Bác sĩ điều trị</label>
+        <input type="text" formControlName="doctor">
+      </div>
+      <p style="color:red" *ngIf="medicalRecordForm.controls.doctor.hasError('required') &&
+         medicalRecordForm.controls.doctor.dirty">Bác sĩ điều trị không để trống</p>
+      <div>
+        <input class="btn btn-success mb-2 ml-4 m-lg-3" type="submit" value="Save" [disabled]="!medicalRecordForm.valid">
+        <a class="btn btn-secondary mb-2 ml-4 m-lg-3" routerLink="" role="button">Exit</a>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+
